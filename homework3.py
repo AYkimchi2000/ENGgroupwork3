@@ -125,6 +125,8 @@ def z_score(x, mu, sigma):
         print("standard deviation can't be 0! review dataset to non identical!")
     return zscore # Place the calculated z-score result between the return statement and this comment so it will be returned by the z_score function
 
+addcase = [462, 78]
 print("Z-scores of population 1", get_z_score_of_data(population1))
 print("Z-scores of population 2", get_z_score_of_data(population2))
 print("Z-scores of population 3", get_z_score_of_data(population3))
+print("Z-scores of additional 2cases", get_z_score_of_data(addcase))
