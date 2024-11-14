@@ -82,17 +82,6 @@ def test_z_score_function():
     print("The z-score of the greatest value of population2 is", greatest_z_score_p2)
   
 
-def get_z_score_of_data(data_set):
-    """
-    Testing function to get the z score of each item in an array
-    """
-    mean_val = mean(data_set)
-    stdev_val = stdev(data_set, mean_val)
-    print(f"Mean: {mean_val}, Standard Deviation: {stdev_val}")
-
-    return [z_score(val, mean_val, stdev_val) for val in data_set]
-    
-
 #######################################################
 # YOUR CODE GOES BELOW THIS BOX.                      #
 #                                                     #
@@ -107,6 +96,17 @@ def get_z_score_of_data(data_set):
 # participated in the group assignment work           #
 #######################################################
 
+def get_z_score_of_data(data_set):
+    """
+    Testing function to get the z score of each item in an array
+    """
+    mean_val = mean(data_set)
+    stdev_val = stdev(data_set, mean_val)
+    print(f"Mean: {mean_val}, Standard Deviation: {stdev_val}")
+
+    return [z_score(val, mean_val, stdev_val) for val in data_set]
+    
+
 def z_score(x, mu, sigma):
     """
     x is the population item
@@ -120,10 +120,10 @@ def z_score(x, mu, sigma):
 
     # Your code goes between this comment and the return statement
     if (sigma > 0):
-        return (x - mu) / sigma
-    
-    
-    return # Place the calculated z-score result between the return statement and this comment so it will be returned by the z_score function
+        zscore = (x - mu) / sigma
+    elif (sigma == 0):
+        print("standard deviation can't be 0! review dataset to non identical!")
+    return zscore # Place the calculated z-score result between the return statement and this comment so it will be returned by the z_score function
 
 print("Z-scores of population 1", get_z_score_of_data(population1))
 print("Z-scores of population 2", get_z_score_of_data(population2))
