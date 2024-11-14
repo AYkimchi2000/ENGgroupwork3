@@ -116,7 +116,7 @@ def z_score(x, mu, sigma):
     Returns the z-score of x
     """
     
-    # Participating group member names go in this comment              
+    # Participating member: Jason, ChenYi           
 
     # Your code goes between this comment and the return statement
     if (sigma > 0):
